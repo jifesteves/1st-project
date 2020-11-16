@@ -1,0 +1,79 @@
+form {
+  display: inline-block;
+  margin: 15px 0;
+}
+
+form input {
+  text-align: center;
+  color: #596aca;
+  background-color: #a1c3db;
+  font-size: 20px;
+  border-radius: 20px;
+  border-color: #007bff;
+}
+
+h1 {
+  color: #142691;
+  font-size: 60px;
+}
+
+h2 {
+  color: #08426e;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+h3 {
+  margin: 50px 0;
+}
+
+a {
+  color: #08426e;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+.container {
+  font-family: inherit;
+  border: 5px solid #006ec5;
+  border-radius: 20px;
+  padding: 0px 15px;
+  max-width: 472px;
+  margin-top: 10px;
+  background: linear-gradient(to bottom right, #268ef5, #afdca5);
+}
+
+.form {
+  display: block;
+  text-align: center;
+}
+
+.description {
+  font-size: 30px;
+}
+
+.row {
+  text-align: center;
+}
+
+.today {
+  position: relative;
+  right: 32px;
+}
+
+.units {
+  font-size: 15px;
+  position: relative;
+  top: -15px;
+}
+
+.measures {
+  font-size: 18px;
+}
+.next-days {
+  position: relative;
+  left: -70px;
+  margin-bottom: 15px;
+}
