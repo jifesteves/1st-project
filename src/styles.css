@@ -6,10 +6,9 @@ form {
 form input {
   text-align: center;
   color: #596aca;
-  background-color: #a1c3db;
   font-size: 20px;
-  border-radius: 20px;
-  border-color: #007bff;
+  border-radius: 5px;
+  border-color: #000000;
 }
 
 h1 {
@@ -35,14 +34,17 @@ a {
 ul {
   list-style-type: none;
 }
-.container {
+
+.app-wrapper {
+  max-width: 550px;
+  margin: 30px auto;
+}
+
+.weather-app {
   font-family: inherit;
-  border: 5px solid #006ec5;
-  border-radius: 20px;
-  padding: 0px 15px;
-  max-width: 472px;
-  margin-top: 10px;
-  background: linear-gradient(to bottom right, #268ef5, #afdca5);
+  padding: 20px;
+  border: 1px solid #006ec5;
+  border-radius: 5px;
 }
 
 .form {
@@ -76,4 +78,8 @@ ul {
   position: relative;
   left: -70px;
   margin-bottom: 15px;
+}
+
+.source {
+  text-align: center;
 }

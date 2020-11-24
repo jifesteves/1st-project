@@ -17,23 +17,25 @@
 <body>
 
   <div class="container">
-
+    <div class="app-wrapper">
+<div class="weather-app">
+  
     <div id="search-form">
       <form>
         <div class="row">
-          <div class="col-6">
+          <div class="col">
             <input type="search" 
             placeholder="Please type city" 
             autofocus="on" 
             autocomplete="off" 
             id="city-input">
           </div>
-          <div class="col-3">
+          <div class="col">
             <input type="submit" 
             value="Search" 
             class="btn btn-primary">
           </div>
-          <div class="col-3">
+          <div class="col">
             <input type="submit"
             value = "Current"
             class= "btn btn-success"
@@ -51,16 +53,17 @@
           </h1>
 
           <h2 id="today-temp">
-            <span id="temperature">19</span>
-            <span class="units">
-              <a href="#" id="celsius">°C</a> |
-              <a href="#" id="fahreneit">°F</a>
+            <ul>
+            <li id="temperature">
+              19<span class="units"><a href="#" id="celsius">°C</a> | <a href="#" id="fahreneit">°F</a>
             </span>
-            🌤
-          </br>
-          <span class= "description" id="description">Sunny</span>
-            </h2>
-          </h2>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" 
+            alt="icon" id="temp-icon"/>
+           </li>
+          <li class= "description" id="description"></li>
+        </ul>
+        </h2>
+        
 
           <h3 id="today">
             Thrusday 03:06
@@ -139,10 +142,13 @@
           </div>
         </div>
       </section>
-    </div>
-    <a href="https://github.com/jifesteves/1st-project" target="_blank"> 
-      Open-source code</a> by Joana Esteves
-    <script src="src/index.js"></script>
+         </div>
+       
+         </div>
+          <small><a href="https://github.com/jifesteves/1st-project" target="_blank">
+              Open-source code</a> by Joana Esteves</small>
+      </div>
+      <script src="src/index.js"></script>
 </body>
 
 </html>

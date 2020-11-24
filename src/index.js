@@ -35,7 +35,13 @@ let humidity = document.querySelector ("#humidity");
 humidity.innerHTML = response.data.main.humidity;
 let wind = document.querySelector("#wind");
 wind.innerHTML = Math.round(response.data.wind.speed);
+let icon = document.querySelector ("#temp-icon");
+icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
 
 function typeCity(event) {
   event.preventDefault();
