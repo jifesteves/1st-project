@@ -28,7 +28,10 @@ function showWeather (response) {
 let city = document.querySelector("#city")
 city.innerHTML = response.data.name;
 let temperature = document.querySelector("#temperature")
-temperature.innerHTML = Math.round (response.data.main.temp);
+
+celsiusTemperature = response.data.main.temp
+
+temperature.innerHTML = Math.round (celsiusTemperature);
 let description = document.querySelector ("#description");
 description.innerHTML = response.data.weather[0].main;
 let humidity = document.querySelector ("#humidity");
@@ -76,23 +79,25 @@ form.addEventListener("submit", typeCity);
 let currentLocation = document.querySelector ("#current-loc");
 currentLocation.addEventListener ("click", showCurrentLoc);
 
-//function celsiusTemp(event) {
-  //event.preventDefault();
-  //let celsius = document.querySelector("#temperature");
-  // celsius.innerHTML = 19;   
-//}
+function celsiusTemp(event) {
+  event.preventDefault();
+  let celsius = document.querySelector("#temperature");
+   celsius.innerHTML = Math.round(celsiusTemperature);   
+}
 
-//let todayTempCelsius = document.querySelector("#celsius");
-//todayTempCelsius.addEventListener("click", celsiusTemp);
+let todayTempCelsius = document.querySelector("#celsius");
+todayTempCelsius.addEventListener("click", celsiusTemp);
 
-//function fahreneitTemp(event) {
-  //event.preventDefault();
-  //let fahreneit = document.querySelector("#temperature");
-  //fahreneit.innerHTML = 66;
-//}
+function fahreneitTemp(event) {
+  event.preventDefault();
+  let fahreneit = document.querySelector("#temperature");
+  fahreneit.innerHTML = Math.round((celsiusTemperature * 9)/ 5 + 32);
+}
 
-//let todayTempFahreneit = document.querySelector("#fahreneit");
-//todayTempFahreneit.addEventListener("click", fahreneitTemp);
+celsiusTemperature = null;
+
+let todayTempFahreneit = document.querySelector("#fahreneit");
+todayTempFahreneit.addEventListener("click", fahreneitTemp);
 
 
 

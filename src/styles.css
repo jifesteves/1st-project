@@ -71,6 +71,15 @@ ul {
   top: -15px;
 }
 
+.active {
+  color: #08426e;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 .measures {
   font-size: 18px;
 }
