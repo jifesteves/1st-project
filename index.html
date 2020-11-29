@@ -52,7 +52,7 @@
             Lisbon
           </h1>
 
-          <h2 id="today-temp">
+          <h2 class= "todayInfo" id="today-temp">
             <ul>
           <li>
             <span id="temperature">19</span><span class="units"><a href="#" id="celsius" class= "active">°C</a> | <a href="#"
@@ -60,93 +60,38 @@
             </span>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="temp-icon" />
           </li>
+          <li>
+            <span id="description"></span>
+          </li>
         </ul>
         </h2>
-        
-
-          <h3 id="today">
+        <h3 id="today">
             Thrusday 03:06
           </h3>
 
-          <ul class="measures">
+          <ul>
+        <span class="measures">
             <li>
             Humidity: <span id="humidity">0</span>%
             </li>
             <li>  
             Wind: <span id="wind">0</span>km/h
             </li>
+            </span>
           </ul>
       </div>
 
       </section>
-
-      <section class="next-days">
-        <div class="col">
-          <div class="day+1">
-            <strong>Fri </strong> ☀
-          </div>
-          <div class="date+1">
-            16/10
-          </div>
-          <div class="weather-day+1">
-            <strong> <span style="color: #142691">22°C | 11°C</span> </strong>
-          </div>
-
-          <br />
-
-          <div class="day+2">
-            <strong>Sat</strong> 🌤
-          </div>
-          <div class="date+2">
-            17/10
-          </div>
-          <div class="weather-day+2">
-            <strong> <span style="color: #142691">21°C | 12°C</span></strong>
-          </div>
-
-          <br />
-
-          <div class="day+3">
-            <strong>Sun</strong> 🌤
-          </div>
-          <div class="date+3">
-            18/10
-          </div>
-          <div class="weather-day+3">
-            <strong> <span style="color:#142691">23°C | 15°C</span></strong>
-          </div>
-
-          <br />
-
-          <div class="day+4">
-            <strong>Mon</strong> 🌧
-          </div>
-          <div class="date+4">
-            19/10
-          </div>
-          <div class="weather-day+4">
-            <strong> <span style="color:#142691">22°C | 12°C</span></strong>
-          </div>
-
-          <br />
-
-          <div class="day+5">
-            <strong>Tue</strong> 🌧
-          </div>
-          <div class="date+5">
-            20/10
-          </div>
-          <div class="weather-day+5">
-            <strong> <span style="color:#142691">21°C | 14°C</span></strong>
-          </div>
-        </div>
-      </section>
-         </div>
-       
-         </div>
-          <small><a href="https://github.com/jifesteves/1st-project" target="_blank">
-              Open-source code</a> by Joana Esteves</small>
+    
       </div>
+      <div class="row weather-forecast" id="forecast"></div>
+    
+   
+      </div>
+      <small><a href="https://github.com/jifesteves/1st-project" target="_blank">
+          Open-source code</a> by Joana Esteves</small>
+      </div>
+    </div>
       <script src="src/index.js"></script>
 </body>
 

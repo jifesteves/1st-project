@@ -27,11 +27,12 @@ today.innerHTML = `${day} ${time}`;
 function showWeather (response) {
 let city = document.querySelector("#city")
 city.innerHTML = response.data.name;
-let temperature = document.querySelector("#temperature")
+let temperature = document.querySelector("#temperature");
 
-celsiusTemperature = response.data.main.temp
+celsiusTemperature = response.data.main.temp;
 
 temperature.innerHTML = Math.round (celsiusTemperature);
+
 let description = document.querySelector ("#description");
 description.innerHTML = response.data.weather[0].main;
 let humidity = document.querySelector ("#humidity");
@@ -45,16 +46,94 @@ icon.setAttribute(
   );
 }
 
+function displayForecast(response) {
+let forecastElement = document.querySelector("#forecast");
+ forecast = response.data.list[0];
+ 
+ forecastElement.innerHTML = `
+  <div class="col-2">
+          <h4>
+          12:00
+          </h4>
+         <img 
+         src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+         />
+         <div class="forecast-temp">
+         <strong>${Math.round(forecast.main.temp_max)}°</strong>
+         ${Math.round(forecast.main.temp_min)}
+          </div>`;
 
-function typeCity(event) {
-  event.preventDefault();
+forecast = response.data.list[1];
+forecastElement.innerHTML = forecastElement.innerHTML + `
+  <div class="col-2">
+          <h4>
+          15:00
+          </h4>
+         <img 
+         src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+         />
+         <div class="forecast-temp">
+         <strong>${Math.round(forecast.main.temp_max)}°</strong>
+         ${Math.round(forecast.main.temp_min)}
+          </div>`;
 
-  let apiKey = "04401a5e5263f12ae9fb23f6e2f1ed77";
-  let city = document.querySelector("#city-input").value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+forecast = response.data.list[2];
+forecastElement.innerHTML = forecastElement.innerHTML + `
+  <div class="col-2">
+          <h4>
+          18:00
+          </h4>
+         <img 
+         src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+         />
+         <div class="forecast-temp">
+         <strong>${Math.round(forecast.main.temp_max)}°</strong>
+         ${Math.round(forecast.main.temp_min)}
+          </div>`;
+
+forecast = response.data.list[3];
+forecastElement.innerHTML = forecastElement.innerHTML + `
+  <div class="col-2">
+          <h4>
+          21:00
+          </h4>
+         <img 
+         src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+         />
+         <div class="forecast-temp">
+         <strong>${Math.round(forecast.main.temp_max)}°</strong>
+         ${Math.round(forecast.main.temp_min)}
+          </div>`;
+
+forecast = response.data.list[4];
+forecastElement.innerHTML = forecastElement.innerHTML + `
+  <div class="col-2">
+          <h4>
+          00:00
+          </h4>
+         <img 
+         src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+         />
+         <div class="forecast-temp">
+         <strong>${Math.round(forecast.main.temp_max)}°</strong>
+         ${Math.round(forecast.main.temp_min)}
+          </div>`;
+}
+
+function search(city) {
+   let apiKey = "04401a5e5263f12ae9fb23f6e2f1ed77";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(url).then(showWeather);
 
+  url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayForecast);
+}
+
+function typeCity (event) {
+  event.preventDefault();
+ let city = document.querySelector("#city-input");
+  search(city.value)
 }
 
 function searchLocation (position) {
@@ -72,12 +151,11 @@ function showCurrentLoc(event) {
   navigator.geolocation.getCurrentPosition(searchLocation)
   }
 
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", typeCity);
-
-let currentLocation = document.querySelector ("#current-loc");
-currentLocation.addEventListener ("click", showCurrentLoc);
+function fahreneitTemp(event) {
+  event.preventDefault();
+  let fahreneit = document.querySelector("#temperature");
+  fahreneit.innerHTML = Math.round((celsiusTemperature * 9)/ 5 + 32);
+}
 
 function celsiusTemp(event) {
   event.preventDefault();
@@ -85,20 +163,20 @@ function celsiusTemp(event) {
    celsius.innerHTML = Math.round(celsiusTemperature);   
 }
 
-let todayTempCelsius = document.querySelector("#celsius");
-todayTempCelsius.addEventListener("click", celsiusTemp);
-
-function fahreneitTemp(event) {
-  event.preventDefault();
-  let fahreneit = document.querySelector("#temperature");
-  fahreneit.innerHTML = Math.round((celsiusTemperature * 9)/ 5 + 32);
-}
 
 celsiusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+let currentLocation = document.querySelector ("#current-loc");
+currentLocation.addEventListener ("click", showCurrentLoc);
 
 let todayTempFahreneit = document.querySelector("#fahreneit");
 todayTempFahreneit.addEventListener("click", fahreneitTemp);
 
+let todayTempCelsius = document.querySelector("#celsius");
+todayTempCelsius.addEventListener("click", celsiusTemp);
 
 
-
+search("Porto");
