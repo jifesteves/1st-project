@@ -19,7 +19,7 @@
   <div class="container">
     <div class="app-wrapper">
 <div class="weather-app">
-  
+  <h2 class= "header"> Weather around the world</h1>
     <div id="search-form">
       <form>
         <div class="row">
@@ -37,7 +37,7 @@
           </div>
           <div class="col">
             <input type="submit"
-            value = "Current"
+            value = "📍"
             class= "btn btn-success"
             id = "current-loc">
           </div>
@@ -45,49 +45,41 @@
       </form>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <section class="today">
-          <h1 id=city>
+    <h3 id="today">
+      Thrusday 03:06
+    </h3>
+  
+  <div class="today">
+      <h1 id=city>
             Lisbon
-          </h1>
+      </h1>
 
-          <h2 class= "todayInfo" id="today-temp">
-            <ul>
+      <h2 class= "todayInfo" id="today-temp">
+          <ul>
           <li>
             <span id="temperature">19</span><span class="units"><a href="#" id="celsius" class= "active">°C</a> | <a href="#"
                 id="fahreneit" class="active">°F</a>
             </span>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="temp-icon" />
-          </li>
+          </li>                  
           <li>
             <span id="description"></span>
           </li>
         </ul>
         </h2>
-        <h3 id="today">
-            Thrusday 03:06
-          </h3>
-
-          <ul>
+            
+         <ul>
         <span class="measures">
-            <li>
-            Humidity: <span id="humidity">0</span>%
-            </li>
-            <li>  
-            Wind: <span id="wind">0</span>km/h
+          <li>
+          <strong>Humidity: </strong><span id="humidity">0</span>%
+          </li>
+          <li>  
+          <strong>Wind:</strong> <span id="wind">0</span>km/h
             </li>
             </span>
           </ul>
       </div>
-
-      </section>
-    
-      </div>
-      <div class="row weather-forecast" id="forecast"></div>
-    
-   
-      </div>
+</div>
       <small><a href="https://github.com/jifesteves/1st-project" target="_blank">
           Open-source code</a> by Joana Esteves</small>
       </div>

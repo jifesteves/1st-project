@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 a {
@@ -42,27 +42,34 @@ ul {
 .weather-app {
   font-family: inherit;
   padding: 20px;
-  border: 1px solid #006ec5;
+  border: 1px solid #407a78;
   border-radius: 5px;
   text-align: center;
-  background-color: lightseagreen;
+  background-color: #5eaaa8;
 }
 
+.header {
+  font-size: 34px;
+}
 .form {
   display: block;
   text-align: center;
 }
 
+.today {
+  width: 450px;
+  border: 3px solid #93beb7;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #a3d2ca;
+}
 .todayInfo {
   line-height: 10px;
+  text-align: left;
 }
 
 .description {
   font-size: 30px;
-}
-
-.row {
-  text-align: center;
 }
 
 .units {
@@ -82,9 +89,5 @@ ul {
 
 .measures {
   font-size: 18px;
-  text-align: center;
-}
-
-.col-2 {
-  margin-left: 9px;
+  text-align: right;
 }
