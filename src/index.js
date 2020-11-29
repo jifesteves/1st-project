@@ -32,7 +32,8 @@ function showWeather (response) {
 let city = document.querySelector("#city")
 city.innerHTML = response.data.name;
 let temperature = document.querySelector("#temperature");
-temperature.innerHTML = Math.round (response.data.main.temp);
+let celsiusTemperature = response.data.main.temp;
+temperature.innerHTML = Math.round (celsiusTemperature);
 let description = document.querySelector ("#description");
 description.innerHTML = response.data.weather[0].main;
 let humidity = document.querySelector ("#humidity");
@@ -77,7 +78,7 @@ function showCurrentLoc(event) {
 function fahreneitTemp(event) {
   event.preventDefault();
   let fahreneit = document.querySelector("#temperature");
-  fahreneit.innerHTML = Math.round((celsiusTemperature * 9)/ 5 + 32);
+  fahreneit.innerHTML = Math.round(((celsiusTemperature) * 9)/ 5 + 32);
 }
 
 function celsiusTemp(event) {
@@ -87,8 +88,6 @@ function celsiusTemp(event) {
 }
 
 celsiusTemperature = null;
-
-
 
 
 let form = document.querySelector("#search-form");
