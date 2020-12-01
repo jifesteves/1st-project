@@ -32,7 +32,7 @@ function showWeather (response) {
 let city = document.querySelector("#city")
 city.innerHTML = response.data.name;
 let temperature = document.querySelector("#temperature");
-let celsiusTemperature = response.data.main.temp;
+celsiusTemperature = response.data.main.temp;
 temperature.innerHTML = Math.round (celsiusTemperature);
 let description = document.querySelector ("#description");
 description.innerHTML = response.data.weather[0].main;
@@ -75,19 +75,21 @@ function showCurrentLoc(event) {
   navigator.geolocation.getCurrentPosition(searchLocation)
   }
 
-function fahreneitTemp(event) {
+function showFahreneitTemp(event) {
   event.preventDefault();
-  let fahreneit = document.querySelector("#temperature");
-  fahreneit.innerHTML = Math.round(((celsiusTemperature) * 9)/ 5 + 32);
-}
+    let temperatureElement = document.querySelector("#temperature");
+    let fahreneitTemp = (celsiusTemperature * 9) /5 + 32;
+    temperatureElement.innerHTML = Math.round(fahreneitTemp);
+  }
 
-function celsiusTemp(event) {
+
+function showCelsiusTemp(event) {
   event.preventDefault();
   let celsius = document.querySelector("#temperature");
    celsius.innerHTML = Math.round(celsiusTemperature);   
 }
 
-celsiusTemperature = null;
+let celsiusTemperature = null;
 
 
 let form = document.querySelector("#search-form");
@@ -97,10 +99,10 @@ let currentLocation = document.querySelector ("#current-loc");
 currentLocation.addEventListener ("click", showCurrentLoc);
 
 let todayTempFahreneit = document.querySelector("#fahreneit");
-todayTempFahreneit.addEventListener("click", fahreneitTemp);
+todayTempFahreneit.addEventListener("click", showFahreneitTemp);
 
 let todayTempCelsius = document.querySelector("#celsius");
-todayTempCelsius.addEventListener("click", celsiusTemp);
+todayTempCelsius.addEventListener("click", showCelsiusTemp);
 
 
 
